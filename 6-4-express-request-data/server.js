@@ -110,11 +110,6 @@ import express from "express";
 // create express app instance to create web server
 const app = express(); // create app
 
-app.listen(3000, () => {
-  console.log("API running at http://localhost:3000");
-});
-
-
 // Query params: /echo?name=Ali&age=22
 app.get("/echo", (req, res) => {
   const { name, age } = req.query;
@@ -168,5 +163,6 @@ app.get("/users/:userId", (req, res) => {
 });
 
 // Start the server by listening
-
-
+app.listen(3000, () => {
+  console.log("API running at http://localhost:3000");
+});
